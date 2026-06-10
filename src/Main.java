@@ -1,5 +1,6 @@
 import modelo.Mecanico;
 import modelo.Veiculo;
+import os.GerenciadorOS;
 import modelo.Peca;
 import modelo.OrdemDeServico;
 import persistencia.Persistencia;
@@ -52,16 +53,22 @@ public class Main {
                                     } }
                         case 2 -> { if(CadastroVeiculo.cadastrar(sc, veiculos, totalVeiculos, maxVeiculos)) {
                                         totalVeiculos++;
-                            } }
+                                    } }
                         case 3 -> { if(CadastroPeca.cadastrar(sc, pecas, totalPecas, maxPecas)) {
                                         totalPecas++;
-                            } }
+                                    } }
                     }
                 }
                 case 2 -> {
                     switch (Menu.menuOS(sc)) {
-                        case 1 -> { /* GerenciadorOS.abrir()  */ }
-                        case 2 -> { /* GerenciadorOS.listar() */ }
+                        case 1 -> { if(GerenciadorOS.abrir(sc,  mecanicos,  totalMecanicos,
+                                                           veiculos, totalVeiculos,  pecas,
+                                                           totalPecas, ordens, totalOrdens, maxOS)){
+                                        totalOrdens++;
+                                    } }
+                        case 2 -> { GerenciadorOS.listar(ordens, totalOrdens, mecanicos,
+                                                         totalMecanicos, veiculos, totalVeiculos,  
+                                                         pecas, totalPecas); }
                     }
                 }
                 case 3 -> {

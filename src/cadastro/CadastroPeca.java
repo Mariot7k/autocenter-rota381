@@ -17,7 +17,7 @@ public class CadastroPeca {
 
         int codigo;
         while (true) {
-            System.out.print("Codigo: ");
+            System.out.print("Codigo (0 para voltar): ");
             codigo = Menu.lerOpcao(sc);
             if (codigo == 0) return false;
 
