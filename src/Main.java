@@ -4,6 +4,7 @@ import os.GerenciadorOS;
 import modelo.Peca;
 import modelo.OrdemDeServico;
 import persistencia.Persistencia;
+import relatorio.Relatorio;
 import menu.Menu;
 import java.util.Scanner;
 
@@ -35,10 +36,10 @@ public class Main {
         OrdemDeServico[]  ordens = new OrdemDeServico[maxOS];
 
         // contadores
-        int totalMecanicos = 0;
-        int totalVeiculos  = 0;
-        int totalPecas     = 0;
-        int totalOrdens    = 0;
+        int totalMecanicos = Persistencia.carregarMecanicos(mecanicos, pastaDados);
+        int totalVeiculos  = Persistencia.carregarVeiculos(veiculos, pastaDados);
+        int totalPecas     = Persistencia.carregarPecas(pecas, pastaDados);
+        int totalOrdens    = Persistencia.carregarOrdens(ordens, pastaDados);
 
         Scanner sc = new Scanner(System.in);
 
@@ -50,12 +51,15 @@ public class Main {
                     switch (Menu.menuCadastro(sc)) {
                         case 1 -> { if (CadastroMecanico.cadastrar(sc, mecanicos, totalMecanicos, maxMecanicos)) {
                                         totalMecanicos++;
+                                        Persistencia.salvarMecanicos(mecanicos, totalMecanicos, pastaDados);
                                     } }
                         case 2 -> { if(CadastroVeiculo.cadastrar(sc, veiculos, totalVeiculos, maxVeiculos)) {
                                         totalVeiculos++;
+                                        Persistencia.salvarVeiculos(veiculos, totalVeiculos, pastaDados);
                                     } }
                         case 3 -> { if(CadastroPeca.cadastrar(sc, pecas, totalPecas, maxPecas)) {
                                         totalPecas++;
+                                        Persistencia.salvarPecas(pecas, totalPecas, pastaDados);
                                     } }
                     }
                 }
@@ -65,6 +69,7 @@ public class Main {
                                                            veiculos, totalVeiculos,  pecas,
                                                            totalPecas, ordens, totalOrdens, maxOS)){
                                         totalOrdens++;
+                                        Persistencia.salvarOrdens(ordens, totalOrdens, pastaDados);
                                     } }
                         case 2 -> { GerenciadorOS.listar(ordens, totalOrdens, mecanicos,
                                                          totalMecanicos, veiculos, totalVeiculos,  
@@ -73,9 +78,9 @@ public class Main {
                 }
                 case 3 -> {
                     switch (Menu.menuRelatorio(sc)) {
-                        case 1 -> { /* Relatorio.comissaoEquipe()    */ }
-                        case 2 -> { /* Relatorio.inventarioCritico() */ }
-                        case 3 -> { /* Relatorio.faturamentoPecas()  */ }
+                        case 1 -> { Relatorio.comissaoEquipe(mecanicos, totalMecanicos, ordens, totalOrdens); }
+                        case 2 -> { Relatorio.inventarioCritico(pecas, totalPecas); }
+                        case 3 -> { Relatorio.faturamentoPecas(ordens, totalOrdens, pecas, totalPecas); }
                     }
                 }
                 case 0 -> System.out.println("Encerrando o sistema...");

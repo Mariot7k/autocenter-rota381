@@ -204,18 +204,18 @@ public class GerenciadorOS {
  
             // buscar descricao e preco da peca
             String descricaoPeca = "-";
-            double totalPecas2   = 0;
+            double valorTotalPecasOS = 0;
             for (int j = 0; j < totalPecas; j++) {
                 if (pecas[j].codigo == os.codigoPeca) {
                     descricaoPeca = pecas[j].descricao;
-                    totalPecas2   = os.quantidadePecaUsada * pecas[j].precoUnitario;
+                    valorTotalPecasOS   = os.quantidadePecaUsada * pecas[j].precoUnitario;
                     break;
                 }
             }
  
             System.out.printf("%-6d %-10s %-20s %-20s %-15s %-6d R$%-10.2f R$%-10.2f%n",
                 os.numero, os.placaVeiculo, nomeDono, nomeMecanico,
-                descricaoPeca, os.quantidadePecaUsada, os.valorMaoDeObra, totalPecas2);
+                descricaoPeca, os.quantidadePecaUsada, os.valorMaoDeObra, valorTotalPecasOS);
         }
     }
 }
