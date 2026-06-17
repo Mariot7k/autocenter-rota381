@@ -1,5 +1,3 @@
-package persistencia;
-
 import modelo.Mecanico;
 import modelo.Veiculo;
 import modelo.Peca;

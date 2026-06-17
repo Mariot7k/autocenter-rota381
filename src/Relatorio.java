@@ -1,5 +1,3 @@
-package relatorio;
-
 import modelo.Mecanico;
 import modelo.Peca;
 import modelo.OrdemDeServico;

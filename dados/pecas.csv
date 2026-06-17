@@ -1,2 +1,16 @@
 codigo;descricao;quantidadeEstoque;precoUnitario
-1;rolamento;100;45.99
+1;pastilha de freio dianteira;20;85.90
+2;oleo 5w30 1l;50;32.50
+3;filtro de oleo;30;28.00
+4;filtro de ar;25;22.00
+5;vela de ignicao;40;18.50
+6;correia dentada;15;120.00
+7;amortecedor dianteiro;10;350.00
+8;disco de freio;12;180.00
+9;bateria 60ah;8;420.00
+10;radiador;6;560.00
+11;bomba dagua;14;210.00
+12;tensor da correia;18;95.00
+13;rolamento de roda;22;140.00
+14;cabo de vela;35;45.00
+15;fluido de freio 500ml;28;24.00

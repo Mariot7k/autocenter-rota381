@@ -1,10 +1,8 @@
-package os;
-
 import modelo.Mecanico;
 import modelo.Veiculo;
 import modelo.Peca;
 import modelo.OrdemDeServico;
-import menu.Menu;
+
 import java.util.Scanner;
 
 public class GerenciadorOS {

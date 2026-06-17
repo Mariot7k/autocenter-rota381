@@ -1,8 +1,10 @@
 package cadastro;
 
 import modelo.Peca;
-import menu.Menu;
+
 import java.util.Scanner;
+
+import Menu;
 
 public class CadastroPeca {
 

@@ -1,11 +1,8 @@
 import modelo.Mecanico;
 import modelo.Veiculo;
-import os.GerenciadorOS;
 import modelo.Peca;
 import modelo.OrdemDeServico;
-import persistencia.Persistencia;
-import relatorio.Relatorio;
-import menu.Menu;
+
 import java.util.Scanner;
 
 import cadastro.CadastroMecanico;
@@ -70,6 +67,7 @@ public class Main {
                                                            totalPecas, ordens, totalOrdens, maxOS)){
                                         totalOrdens++;
                                         Persistencia.salvarOrdens(ordens, totalOrdens, pastaDados);
+                                        Persistencia.salvarPecas(pecas, totalPecas, pastaDados);
                                     } }
                         case 2 -> { GerenciadorOS.listar(ordens, totalOrdens, mecanicos,
                                                          totalMecanicos, veiculos, totalVeiculos,  
