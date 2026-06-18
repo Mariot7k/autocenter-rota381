@@ -26,6 +26,7 @@ public class Menu {
         System.out.println("\n=== ORDENS DE SERVICO ===");
         System.out.println("1. Abrir OS");
         System.out.println("2. Listar OS");
+        System.out.println("3. Historico de OS por veiculo");
         System.out.println("0. Voltar");
         System.out.print("Opcao: ");
         return lerOpcao(sc);

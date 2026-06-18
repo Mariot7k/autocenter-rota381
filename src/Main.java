@@ -1,13 +1,11 @@
-import modelo.Mecanico;
-import modelo.Veiculo;
-import modelo.Peca;
-import modelo.OrdemDeServico;
-
-import java.util.Scanner;
-
 import cadastro.CadastroMecanico;
 import cadastro.CadastroPeca;
 import cadastro.CadastroVeiculo;
+import java.util.Scanner;
+import modelo.Mecanico;
+import modelo.OrdemDeServico;
+import modelo.Peca;
+import modelo.Veiculo;
 
 public class Main {
 
@@ -72,6 +70,8 @@ public class Main {
                         case 2 -> { GerenciadorOS.listar(ordens, totalOrdens, mecanicos,
                                                          totalMecanicos, veiculos, totalVeiculos,  
                                                          pecas, totalPecas); }
+                        case 3 -> { HistoricoVeiculo.exibir(sc, veiculos, totalVeiculos, ordens, 
+                                                           totalOrdens, mecanicos, totalMecanicos, pecas, totalPecas);}
                     }
                 }
                 case 3 -> {
